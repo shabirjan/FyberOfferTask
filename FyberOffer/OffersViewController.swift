@@ -14,7 +14,11 @@ class OffersViewController: UIViewController {
     var options : FYBOfferOptions?
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let networkManager = NetworkManager(options: self.options!)
+        networkManager.delegate = delegate
+        networkManager.fetchOffers { offers in
+            
+        }
         // Do any additional setup after loading the view.
     }
 

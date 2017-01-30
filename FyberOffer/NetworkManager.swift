@@ -20,16 +20,30 @@ class NetworkManager{
     }
     
     //Public Method, Only this method will be exposed to Controller
-    func fetchOffers(completion:[FyberOfferModel]){
+    func fetchOffers(completion:([FyberOfferModel]) -> Void){
         let prepopulatedParameters  = [("format","json"),("local","DE"),("offer_types","112"),("ip","109.235.143.113")]
         fetchOffersFromUrl(params: prepopulatedParameters,completion: completion)
         
     }
     
     //Private Methods
-    private func fetchOffersFromUrl(params:[(String,String)],completion: [FyberOfferModel]){
+    private func fetchOffersFromUrl(params:[(String,String)],completion: ([FyberOfferModel]) -> Void){
         let requestURL = generateParametersForUrl(params: params)
-        print(requestURL)
+        if !(requestURL.absoluteString.isEmpty) {
+         URLSession.shared.dataTask(with: requestURL, completionHandler: { (data, response, error) in
+            if error == nil{
+                if let sigatureValue = (response! as! HTTPURLResponse).allHeaderFields[""] as? String{
+                    
+                }else{
+                    self.delegate?.offersLoadFailedWithError!(error: "No Signature Found in response")
+                }
+            }else{
+                self.delegate?.offersLoadFailedWithError?(error: error!.localizedDescription)
+            }
+         }).resume()
+        }else{
+            self.delegate?.offersLoadFailedWithError?(error: "URL Error")
+        }
         
         
     }
@@ -40,16 +54,16 @@ class NetworkManager{
         let trackingEnabled = ASIdentifierManager.shared().isAdvertisingTrackingEnabled ? "true" : "false"
         
         
-        let allParams = params + [("appId",options!.appID),("uid",options!.userID),("os_version",UIDevice.current.systemVersion),("timestamp",String(Int64(currentDate.timeIntervalSince1970))),("apple_idfa_",uuidString),("apple_idfa_tracking_enabled",trackingEnabled)]
+        let allParams = params + [("appid",options!.appID),("uid",options!.userID),("os_version",UIDevice.current.systemVersion),("timestamp",String(Int64(currentDate.timeIntervalSince1970))),("apple_idfa_",uuidString),("apple_idfa_tracking_enabled",trackingEnabled)]
         
         
-        var requestString = allParams.sorted(by: ({$0.0 < $1.0})).map({$0.0 + "=" + $0.1}).reduce("", {$0 + "$" + $1})
+        var requestString = allParams.sorted(by: ({$0.0 < $1.0})).map({$0.0 + "=" + $0.1}).reduce("", {$0 + "&" + $1})
         
         
-        return generateURLWithHash(requestString : String(requestString.remove(at:requestString.startIndex)))!
         
-        
+        return generateURLWithHash(requestString: String(requestString.characters.dropFirst()))!
     }
+    
     private func generateURLWithHash(requestString : String) -> URL?{
         let sha1 = (requestString + "&" + options!.securityToken).sha1().lowercased()
         if sha1.isEmpty{

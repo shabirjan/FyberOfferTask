@@ -15,6 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        //Prepopulated Values for Offers
+        UserDefaults.standard.register(defaults: ["appID":"2070","userID":"spiderman","token":"1c915e3b5d42d05136185030892fbb846c278927"])
+        
+        
+        
+        
         // Override point for customization after application launch.
         return true
     }

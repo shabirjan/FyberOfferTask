@@ -32,7 +32,8 @@ class FyberOfferSDK{
         let storyboard = UIStoryboard(name: "OffersStoryboard", bundle: nil)
         if let offerVC = storyboard.instantiateViewController(withIdentifier: "offerVC") as? OffersViewController
         {
-            
+            offerVC.delegate = delegate
+            offerVC.options = fybOptions
             parentController.present(offerVC, animated: true, completion: nil)
         }
     }

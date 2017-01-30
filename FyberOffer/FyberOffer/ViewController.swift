@@ -29,7 +29,6 @@ class ViewController: UIViewController {
         txtAppID.text = appID as? String
         txtUserID.text = userID as? String
         txtToken.text = tokenID as? String
-        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -58,7 +57,7 @@ extension ViewController: FyberOfferDelegates{
         
     }
     func offersDidClose() {
-        
+        print("Offers closed")
     }
    
     func offersRecevied(totalOffers: Int) {

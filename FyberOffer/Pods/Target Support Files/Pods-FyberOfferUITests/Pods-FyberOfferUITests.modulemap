@@ -1,0 +1,6 @@
+framework module Pods_FyberOfferUITests {
+  umbrella header "Pods-FyberOfferUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

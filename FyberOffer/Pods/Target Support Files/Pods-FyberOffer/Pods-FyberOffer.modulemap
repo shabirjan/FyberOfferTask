@@ -1,0 +1,6 @@
+framework module Pods_FyberOffer {
+  umbrella header "Pods-FyberOffer-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -34,6 +34,15 @@ class NetworkManager{
             if error == nil{
                 if let sigatureValue = (response! as! HTTPURLResponse).allHeaderFields[""] as? String{
                     
+                    let strData = String(data: data!, encoding: String.Encoding.utf8)
+                    let sha1 = (strData! + (self.options?.securityToken)!).sha1().lowercased()
+                    
+                    if sha1 == sigatureValue{
+                        
+                    }else{
+                        self.delegate?.offersLoadFailedWithError!(error: "Corrupt Data")
+                    }
+                    
                 }else{
                     self.delegate?.offersLoadFailedWithError!(error: "No Signature Found in response")
                 }

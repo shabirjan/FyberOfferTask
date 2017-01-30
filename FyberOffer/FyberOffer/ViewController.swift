@@ -37,11 +37,39 @@ class ViewController: UIViewController {
     }
 
     @IBAction func loadOffers(_ sender: Any) {
-        
+        let options = FYBOfferOptions(appID: txtAppID.text!, userID: txtUserID.text!, securityToken: txtToken.text!)
+        let sdk = FyberOfferSDK(options: options)
+        sdk.delegate = self
+        sdk.loadOffers(parentController: self)
     }
 
 }
 extension ViewController: UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return textField.resignFirstResponder()
+    }
+}
+extension ViewController: FyberOfferDelegates{
+    
+    func offersDidLoad() {
+        
+    }
+    func offerDidLoadOnView() {
+        
+    }
+    func offersDidClose() {
+        
+    }
+   
+    func offersRecevied(totalOffers: Int) {
+        print("total offers are \(totalOffers)")
+    }
+    func offersLoadFailedWithError(error: String) {
+        print("Offer failed to load due to \(error)")
+    }
+    func userSelectedOffer(offer: FyberOfferModel) {
+        print("User selected offer \(offer)")
+    }
+    
     
 }
-

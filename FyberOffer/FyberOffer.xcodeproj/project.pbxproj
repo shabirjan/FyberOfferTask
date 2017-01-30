@@ -16,6 +16,16 @@
 		D0D93BF41E3F2597003E4E17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0D93BF21E3F2597003E4E17 /* LaunchScreen.storyboard */; };
 		D0D93BFF1E3F2597003E4E17 /* FyberOfferTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D93BFE1E3F2597003E4E17 /* FyberOfferTests.swift */; };
 		D0D93C0A1E3F2597003E4E17 /* FyberOfferUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D93C091E3F2597003E4E17 /* FyberOfferUITests.swift */; };
+		D0D93C191E3F3AD7003E4E17 /* FYBOfferOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D93C181E3F3AD7003E4E17 /* FYBOfferOptions.swift */; };
+		D0D93C1B1E3F3C4A003E4E17 /* FyberOfferSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D93C1A1E3F3C4A003E4E17 /* FyberOfferSDK.swift */; };
+		D0D93C1D1E3F4897003E4E17 /* FyberOfferModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D93C1C1E3F4897003E4E17 /* FyberOfferModel.swift */; };
+		D0D93C1E1E3F489A003E4E17 /* FyberOfferModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D93C1C1E3F4897003E4E17 /* FyberOfferModel.swift */; };
+		D0D93C1F1E3F489D003E4E17 /* FyberOfferSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D93C1A1E3F3C4A003E4E17 /* FyberOfferSDK.swift */; };
+		D0D93C201E3F489F003E4E17 /* FYBOfferOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D93C181E3F3AD7003E4E17 /* FYBOfferOptions.swift */; };
+		D0D93C221E3F4D6D003E4E17 /* OffersStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0D93C211E3F4D6D003E4E17 /* OffersStoryboard.storyboard */; };
+		D0D93C231E3F4D6D003E4E17 /* OffersStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0D93C211E3F4D6D003E4E17 /* OffersStoryboard.storyboard */; };
+		D0D93C251E3F4D90003E4E17 /* OffersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D93C241E3F4D90003E4E17 /* OffersViewController.swift */; };
+		D0D93C261E3F4D90003E4E17 /* OffersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D93C241E3F4D90003E4E17 /* OffersViewController.swift */; };
 		F92DC32D338F49A15F897B10 /* Pods_FyberOfferTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 897A67F2CE0E322C8726042D /* Pods_FyberOfferTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +68,11 @@
 		D0D93C051E3F2597003E4E17 /* FyberOfferUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FyberOfferUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0D93C091E3F2597003E4E17 /* FyberOfferUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FyberOfferUITests.swift; sourceTree = "<group>"; };
 		D0D93C0B1E3F2597003E4E17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0D93C181E3F3AD7003E4E17 /* FYBOfferOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FYBOfferOptions.swift; sourceTree = "<group>"; };
+		D0D93C1A1E3F3C4A003E4E17 /* FyberOfferSDK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FyberOfferSDK.swift; sourceTree = "<group>"; };
+		D0D93C1C1E3F4897003E4E17 /* FyberOfferModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FyberOfferModel.swift; sourceTree = "<group>"; };
+		D0D93C211E3F4D6D003E4E17 /* OffersStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OffersStoryboard.storyboard; sourceTree = "<group>"; };
+		D0D93C241E3F4D90003E4E17 /* OffersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffersViewController.swift; sourceTree = "<group>"; };
 		F94F49F3216E8EB38F2A6767 /* Pods_FyberOfferUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FyberOfferUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -115,6 +130,7 @@
 		D0D93BDD1E3F2597003E4E17 = {
 			isa = PBXGroup;
 			children = (
+				D0D93C171E3F3A2A003E4E17 /* FyberOffSDK */,
 				D0D93BE81E3F2597003E4E17 /* FyberOffer */,
 				D0D93BFD1E3F2597003E4E17 /* FyberOfferTests */,
 				D0D93C081E3F2597003E4E17 /* FyberOfferUITests */,
@@ -163,6 +179,18 @@
 				D0D93C0B1E3F2597003E4E17 /* Info.plist */,
 			);
 			path = FyberOfferUITests;
+			sourceTree = "<group>";
+		};
+		D0D93C171E3F3A2A003E4E17 /* FyberOffSDK */ = {
+			isa = PBXGroup;
+			children = (
+				D0D93C181E3F3AD7003E4E17 /* FYBOfferOptions.swift */,
+				D0D93C1A1E3F3C4A003E4E17 /* FyberOfferSDK.swift */,
+				D0D93C1C1E3F4897003E4E17 /* FyberOfferModel.swift */,
+				D0D93C211E3F4D6D003E4E17 /* OffersStoryboard.storyboard */,
+				D0D93C241E3F4D90003E4E17 /* OffersViewController.swift */,
+			);
+			name = FyberOffSDK;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,6 +309,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0D93C221E3F4D6D003E4E17 /* OffersStoryboard.storyboard in Resources */,
 				D0D93BF41E3F2597003E4E17 /* LaunchScreen.storyboard in Resources */,
 				D0D93BF11E3F2597003E4E17 /* Assets.xcassets in Resources */,
 				D0D93BEF1E3F2597003E4E17 /* Main.storyboard in Resources */,
@@ -291,6 +320,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0D93C231E3F4D6D003E4E17 /* OffersStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,6 +477,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0D93BEC1E3F2597003E4E17 /* ViewController.swift in Sources */,
+				D0D93C251E3F4D90003E4E17 /* OffersViewController.swift in Sources */,
+				D0D93C191E3F3AD7003E4E17 /* FYBOfferOptions.swift in Sources */,
+				D0D93C1D1E3F4897003E4E17 /* FyberOfferModel.swift in Sources */,
+				D0D93C1B1E3F3C4A003E4E17 /* FyberOfferSDK.swift in Sources */,
 				D0D93BEA1E3F2597003E4E17 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -456,6 +490,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0D93BFF1E3F2597003E4E17 /* FyberOfferTests.swift in Sources */,
+				D0D93C1E1E3F489A003E4E17 /* FyberOfferModel.swift in Sources */,
+				D0D93C1F1E3F489D003E4E17 /* FyberOfferSDK.swift in Sources */,
+				D0D93C201E3F489F003E4E17 /* FYBOfferOptions.swift in Sources */,
+				D0D93C261E3F4D90003E4E17 /* OffersViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -698,6 +736,7 @@
 				D0D93C101E3F2597003E4E17 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D0D93C111E3F2597003E4E17 /* Build configuration list for PBXNativeTarget "FyberOfferTests" */ = {
 			isa = XCConfigurationList;
@@ -706,6 +745,7 @@
 				D0D93C131E3F2597003E4E17 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D0D93C141E3F2597003E4E17 /* Build configuration list for PBXNativeTarget "FyberOfferUITests" */ = {
 			isa = XCConfigurationList;
@@ -714,6 +754,7 @@
 				D0D93C161E3F2597003E4E17 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

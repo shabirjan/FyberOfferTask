@@ -78,6 +78,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="lblTitle" destination="7sC-VC-4yg" id="ii9-1z-xta"/>
+                                            <outlet property="thumbnailImage" destination="Z4d-HF-0hK" id="ECi-WG-IF7"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

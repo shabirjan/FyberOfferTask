@@ -91,7 +91,18 @@ extension OffersViewController : UITableViewDelegate,UITableViewDataSource{
         cell?.lblTitle.text = currentOffer.offerTitle
         
         self.delegate?.offerDidLoadOnView!(offer: currentOffer)
-        
+        URLSession.shared.dataTask(with: URL(string: currentOffer.offerThumbnail)!) { (data, response, error) in
+            if error == nil {
+                guard let image = UIImage(data: data!) else { return }
+                DispatchQueue.main.async {
+                    cell?.thumbnailImage.image = image
+
+                }
+                
+            }else{
+                self.delegate?.offersLoadFailedWithError!(error: (error?.localizedDescription)!)
+            }
+        }.resume()
         
         return cell!
     }

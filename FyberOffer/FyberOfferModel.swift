@@ -7,17 +7,20 @@
 //
 
 import Foundation
+import SwiftyJSON
 class FyberOfferModel:NSObject{
     
     let offerTitle : String
-    let offerId: Int
+    let offerId: NSNumber
     let offerThumbnail:String
    
     
-    init(title: String, id:Int, thumbnail:String) {
-        self.offerTitle = title
+    init?(offerDictionary :JSON){
+        guard let id = offerDictionary["offer_id"].number,
+            let title = offerDictionary["title"].string,
+            let thumbnail = offerDictionary["thumbnail"]["hires"].string else { return nil}
         self.offerId = id
+        self.offerTitle = title
         self.offerThumbnail = thumbnail
-        
     }
 }

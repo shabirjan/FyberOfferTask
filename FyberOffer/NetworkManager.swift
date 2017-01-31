@@ -20,27 +20,32 @@ class NetworkManager{
     }
     
     //Public Method, Only this method will be exposed to Controller
-    func fetchOffers(completion:([FyberOfferModel]) -> Void){
+    func fetchOffers(completion:@escaping ([FyberOfferModel]) -> Void){
         let prepopulatedParameters  = [("format","json"),("local","DE"),("offer_types","112"),("ip","109.235.143.113")]
         fetchOffersFromUrl(params: prepopulatedParameters,completion: completion)
         
     }
     
     //Private Methods
-    private func fetchOffersFromUrl(params:[(String,String)],completion: ([FyberOfferModel]) -> Void){
+    private func fetchOffersFromUrl(params:[(String,String)],completion: @escaping ([FyberOfferModel]) -> Void){
         let requestURL = generateParametersForUrl(params: params)
         if !(requestURL.absoluteString.isEmpty) {
          URLSession.shared.dataTask(with: requestURL, completionHandler: { (data, response, error) in
             if error == nil{
-                if let sigatureValue = (response! as! HTTPURLResponse).allHeaderFields[""] as? String{
+                guard let data = data else { return  }
+                if let sigatureValue = (response! as! HTTPURLResponse).allHeaderFields["X-Sponsorpay-Response-Signature"] as? String{
                     
-                    let strData = String(data: data!, encoding: String.Encoding.utf8)
+                    let strData = String(data: data, encoding: String.Encoding.utf8)
                     let sha1 = (strData! + (self.options?.securityToken)!).sha1().lowercased()
                     
                     if sha1 == sigatureValue{
+                         let allOffers = JSON(data:data)["offers"]
+                        if allOffers.type == Type.array{
+                           completion(allOffers.arrayValue.flatMap(FyberOfferModel.init(offerDictionary:)))
+                        }
                         
                     }else{
-                        self.delegate?.offersLoadFailedWithError!(error: "Corrupt Data")
+                        self.delegate?.offersLoadFailedWithError!(error: "Corrupt Data, Signature mismatched")
                     }
                     
                 }else{
@@ -56,6 +61,7 @@ class NetworkManager{
         
         
     }
+   
     private func generateParametersForUrl(params:[(String,String)]) -> URL{
         
         let currentDate = NSDate()

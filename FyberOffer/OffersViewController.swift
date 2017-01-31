@@ -9,19 +9,55 @@
 import UIKit
 
 class OffersViewController: UIViewController {
-
+    
+    
     var delegate: FyberOfferDelegates?
     var options : FYBOfferOptions?
+    var parentController : UIViewController?
+    
+    
+    var allOffers = [FyberOfferModel]()
+    
+    @IBOutlet weak var offerTableView: UITableView!
+    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var lblNoOffers: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let networkManager = NetworkManager(options: self.options!)
-        networkManager.delegate = delegate
-        networkManager.fetchOffers { offers in
-            
-        }
-        // Do any additional setup after loading the view.
+        
+        fetchOffers()
+        
     }
-
+    func fetchOffers(){
+        allOffers = []
+        if self.options != nil {
+            activityIndicator.startAnimating()
+            let networkManager = NetworkManager(options: self.options!)
+            networkManager.delegate = delegate
+            networkManager.fetchOffers {[weak self] offers in
+                self?.activityIndicator.stopAnimating()
+                
+                if offers.count > 0 {
+                    self?.allOffers = offers
+                    self?.delegate?.offersRecevied!(totalOffers: offers.count)
+                    self?.offerTableView.isHidden = false
+                    self?.offerTableView.reloadData()
+                    self?.delegate?.offersDidLoad!()
+                }
+                else{
+                    self?.delegate?.offersLoadFailedWithError!(error: "No Offers found")
+                    self?.lblNoOffers.isHidden = false
+                }
+            }
+        }else{
+            self.delegate?.offersLoadFailedWithError!(error: "Invalid Options")
+        }
+        
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -29,7 +65,39 @@ class OffersViewController: UIViewController {
     
     @IBAction func btnClosePressed(_ sender: Any) {
         delegate?.offersDidClose?()
-        self.dismiss(animated: true, completion: nil)
+        parentController?.dismiss(animated: true, completion: nil)
     }
-
+    
+    @IBAction func refreshOffers(_ sender: Any) {
+        fetchOffers()
+    }
+}
+extension OffersViewController : UITableViewDelegate,UITableViewDataSource{
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 81
+    }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return allOffers.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell:OfferTableViewCell? = tableView.dequeueReusableCell(withIdentifier: "offerCell") as? OfferTableViewCell
+        if cell == nil {
+            cell = OfferTableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "offerCell")
+        }
+        let currentOffer = allOffers[indexPath.row]
+        cell?.lblTitle.text = currentOffer.offerTitle
+        
+        self.delegate?.offerDidLoadOnView!(offer: currentOffer)
+        
+        
+        return cell!
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedOffer = self.allOffers[indexPath.row]
+        self.delegate?.userSelectedOffer!(offer: selectedOffer)
+        
+    }
 }

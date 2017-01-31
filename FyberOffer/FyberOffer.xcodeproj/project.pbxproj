@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		69F5D49EE272E64883B09ECA /* Pods_FyberOffer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462944A74B82BC096B5709B5 /* Pods_FyberOffer.framework */; };
 		C89877051FAB5BF319E0AC78 /* Pods_FyberOfferUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F94F49F3216E8EB38F2A6767 /* Pods_FyberOfferUITests.framework */; };
+		D058C3431E4072D60086B4A6 /* OfferTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D058C3421E4072D60086B4A6 /* OfferTableViewCell.swift */; };
+		D058C3441E4072D60086B4A6 /* OfferTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D058C3421E4072D60086B4A6 /* OfferTableViewCell.swift */; };
+		D058C3491E4090580086B4A6 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = D058C3481E4090580086B4A6 /* placeholder.png */; };
+		D058C34A1E4090580086B4A6 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = D058C3481E4090580086B4A6 /* placeholder.png */; };
 		D0D93BEA1E3F2597003E4E17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D93BE91E3F2597003E4E17 /* AppDelegate.swift */; };
 		D0D93BEC1E3F2597003E4E17 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D93BEB1E3F2597003E4E17 /* ViewController.swift */; };
 		D0D93BEF1E3F2597003E4E17 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0D93BED1E3F2597003E4E17 /* Main.storyboard */; };
@@ -57,6 +61,8 @@
 		7D6A22C1E268D313C2659BA5 /* Pods-FyberOfferTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FyberOfferTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FyberOfferTests/Pods-FyberOfferTests.debug.xcconfig"; sourceTree = "<group>"; };
 		897A67F2CE0E322C8726042D /* Pods_FyberOfferTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FyberOfferTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC773A435BA5097269E4058A /* Pods-FyberOffer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FyberOffer.release.xcconfig"; path = "Pods/Target Support Files/Pods-FyberOffer/Pods-FyberOffer.release.xcconfig"; sourceTree = "<group>"; };
+		D058C3421E4072D60086B4A6 /* OfferTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferTableViewCell.swift; sourceTree = "<group>"; };
+		D058C3481E4090580086B4A6 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		D0D93BE61E3F2597003E4E17 /* FyberOffer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FyberOffer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0D93BE91E3F2597003E4E17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0D93BEB1E3F2597003E4E17 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -199,8 +205,10 @@
 		D0D93C271E3F5BCF003E4E17 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				D058C3481E4090580086B4A6 /* placeholder.png */,
 				D0D93C211E3F4D6D003E4E17 /* OffersStoryboard.storyboard */,
 				D0D93C241E3F4D90003E4E17 /* OffersViewController.swift */,
+				D058C3421E4072D60086B4A6 /* OfferTableViewCell.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -330,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0D93C221E3F4D6D003E4E17 /* OffersStoryboard.storyboard in Resources */,
+				D058C3491E4090580086B4A6 /* placeholder.png in Resources */,
 				D0D93BF41E3F2597003E4E17 /* LaunchScreen.storyboard in Resources */,
 				D0D93BF11E3F2597003E4E17 /* Assets.xcassets in Resources */,
 				D0D93BEF1E3F2597003E4E17 /* Main.storyboard in Resources */,
@@ -340,6 +349,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D058C34A1E4090580086B4A6 /* placeholder.png in Resources */,
 				D0D93C231E3F4D6D003E4E17 /* OffersStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -496,6 +506,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D058C3431E4072D60086B4A6 /* OfferTableViewCell.swift in Sources */,
 				D0D93BEC1E3F2597003E4E17 /* ViewController.swift in Sources */,
 				D0D93C251E3F4D90003E4E17 /* OffersViewController.swift in Sources */,
 				D0D93C191E3F3AD7003E4E17 /* FYBOfferOptions.swift in Sources */,
@@ -516,6 +527,7 @@
 				D0D93C1F1E3F489D003E4E17 /* FyberOfferSDK.swift in Sources */,
 				D0D93C201E3F489F003E4E17 /* FYBOfferOptions.swift in Sources */,
 				D0D93C261E3F4D90003E4E17 /* OffersViewController.swift in Sources */,
+				D058C3441E4072D60086B4A6 /* OfferTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

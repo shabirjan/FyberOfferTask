@@ -16,7 +16,7 @@ class NetworkManager{
     let baseUrl = "http://api.fyber.com/feed/v1/offers.json?"
     
     init(options : FYBOfferOptions) {
-       self.options = options
+        self.options = options
     }
     
     //Public Method, Only this method will be exposed to Controller
@@ -30,38 +30,48 @@ class NetworkManager{
     private func fetchOffersFromUrl(params:[(String,String)],completion: @escaping ([FyberOfferModel]) -> Void){
         let requestURL = generateParametersForUrl(params: params)
         if !(requestURL.absoluteString.isEmpty) {
-         URLSession.shared.dataTask(with: requestURL, completionHandler: { (data, response, error) in
-            if error == nil{
-                guard let data = data else { return  }
-                if let sigatureValue = (response! as! HTTPURLResponse).allHeaderFields["X-Sponsorpay-Response-Signature"] as? String{
-                    
-                    let strData = String(data: data, encoding: String.Encoding.utf8)
-                    let sha1 = (strData! + (self.options?.securityToken)!).sha1().lowercased()
-                    
-                    if sha1 == sigatureValue{
-                         let allOffers = JSON(data:data)["offers"]
-                        if allOffers.type == Type.array{
-                           completion(allOffers.arrayValue.flatMap(FyberOfferModel.init(offerDictionary:)))
+            URLSession.shared.dataTask(with: requestURL, completionHandler: { (data, response, error) in
+                if error == nil{
+                    guard let data = data else { return  }
+                    if let sigatureValue = (response! as! HTTPURLResponse).allHeaderFields["X-Sponsorpay-Response-Signature"] as? String{
+                        
+                        let strData = String(data: data, encoding: String.Encoding.utf8)
+                        let sha1 = (strData! + (self.options?.securityToken)!).sha1().lowercased()
+                        
+                        if sha1 == sigatureValue{
+                            let allOffers = JSON(data:data)["offers"]
+                            if allOffers.type == Type.array{
+                                if allOffers.arrayValue.count > 0{
+                                    DispatchQueue.main.async {
+                                        completion(allOffers.arrayValue.flatMap(FyberOfferModel.init(offerDictionary:)))
+                                    }
+                                    
+                                }else{
+                                    self.delegate?.offersLoadFailedWithError!(error: "No Offers Found")
+                                }
+                            }
+                            
+                        }else{
+                            self.delegate?.offersLoadFailedWithError!(error: "Corrupt Data, Signature mismatched")
                         }
                         
                     }else{
-                        self.delegate?.offersLoadFailedWithError!(error: "Corrupt Data, Signature mismatched")
+                        self.delegate?.offersLoadFailedWithError!(error: "No Signature Found in response")
                     }
-                    
                 }else{
-                    self.delegate?.offersLoadFailedWithError!(error: "No Signature Found in response")
+                    DispatchQueue.main.async {
+                        completion([])
+                    }
+                    self.delegate?.offersLoadFailedWithError?(error: error!.localizedDescription)
                 }
-            }else{
-                self.delegate?.offersLoadFailedWithError?(error: error!.localizedDescription)
-            }
-         }).resume()
+            }).resume()
         }else{
             self.delegate?.offersLoadFailedWithError?(error: "URL Error")
         }
         
         
     }
-   
+    
     private func generateParametersForUrl(params:[(String,String)]) -> URL{
         
         let currentDate = NSDate()
@@ -85,9 +95,9 @@ class NetworkManager{
             return nil
         }
         else{
-           return  URL(string: self.baseUrl + requestString + "&hashkey=" + sha1)
+            return  URL(string: self.baseUrl + requestString + "&hashkey=" + sha1)
         }
         
     }
-
+    
 }

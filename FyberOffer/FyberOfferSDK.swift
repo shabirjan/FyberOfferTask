@@ -16,7 +16,7 @@ import UIKit
     @objc optional func userSelectedOffer(offer:FyberOfferModel)
     @objc optional func offersDidClose()
     @objc optional func offersRecevied(totalOffers:Int)
-    @objc optional func offerDidLoadOnView()
+    @objc optional func offerDidLoadOnView(offer:FyberOfferModel)
 }
 
 
@@ -34,6 +34,7 @@ class FyberOfferSDK{
         {
             offerVC.delegate = delegate
             offerVC.options = fybOptions
+            offerVC.parentController = parentController
             parentController.present(offerVC, animated: true, completion: nil)
         }
     }

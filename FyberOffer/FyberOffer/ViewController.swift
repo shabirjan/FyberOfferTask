@@ -51,9 +51,12 @@ extension ViewController: UITextFieldDelegate{
 extension ViewController: FyberOfferDelegates{
     
     func offersDidLoad() {
+        print("Offers fetched")
         
     }
-    func offerDidLoadOnView() {
+    func offerDidLoadOnView(offer: FyberOfferModel)
+    {
+        print("Offer appeared \(offer.offerTitle)")
         
     }
     func offersDidClose() {
@@ -67,7 +70,7 @@ extension ViewController: FyberOfferDelegates{
         print("Offer failed to load due to \(error)")
     }
     func userSelectedOffer(offer: FyberOfferModel) {
-        print("User selected offer \(offer)")
+        print("User selected offer \(offer.offerTitle)")
     }
     
     

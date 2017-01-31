@@ -13,6 +13,7 @@
 		D058C3441E4072D60086B4A6 /* OfferTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D058C3421E4072D60086B4A6 /* OfferTableViewCell.swift */; };
 		D058C3491E4090580086B4A6 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = D058C3481E4090580086B4A6 /* placeholder.png */; };
 		D058C34A1E4090580086B4A6 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = D058C3481E4090580086B4A6 /* placeholder.png */; };
+		D06E53C71E40CF97005452F6 /* FyberOfferSDKTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06E53C61E40CF97005452F6 /* FyberOfferSDKTest.swift */; };
 		D0D93BEA1E3F2597003E4E17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D93BE91E3F2597003E4E17 /* AppDelegate.swift */; };
 		D0D93BEC1E3F2597003E4E17 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D93BEB1E3F2597003E4E17 /* ViewController.swift */; };
 		D0D93BEF1E3F2597003E4E17 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0D93BED1E3F2597003E4E17 /* Main.storyboard */; };
@@ -63,6 +64,7 @@
 		AC773A435BA5097269E4058A /* Pods-FyberOffer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FyberOffer.release.xcconfig"; path = "Pods/Target Support Files/Pods-FyberOffer/Pods-FyberOffer.release.xcconfig"; sourceTree = "<group>"; };
 		D058C3421E4072D60086B4A6 /* OfferTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferTableViewCell.swift; sourceTree = "<group>"; };
 		D058C3481E4090580086B4A6 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
+		D06E53C61E40CF97005452F6 /* FyberOfferSDKTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FyberOfferSDKTest.swift; sourceTree = "<group>"; };
 		D0D93BE61E3F2597003E4E17 /* FyberOffer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FyberOffer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0D93BE91E3F2597003E4E17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0D93BEB1E3F2597003E4E17 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 			children = (
 				D0D93BFE1E3F2597003E4E17 /* FyberOfferTests.swift */,
 				D0D93C001E3F2597003E4E17 /* Info.plist */,
+				D06E53C61E40CF97005452F6 /* FyberOfferSDKTest.swift */,
 			);
 			path = FyberOfferTests;
 			sourceTree = "<group>";
@@ -552,6 +555,7 @@
 				D0D93C1F1E3F489D003E4E17 /* FyberOfferSDK.swift in Sources */,
 				D0D93C201E3F489F003E4E17 /* FYBOfferOptions.swift in Sources */,
 				D0D93C261E3F4D90003E4E17 /* OffersViewController.swift in Sources */,
+				D06E53C71E40CF97005452F6 /* FyberOfferSDKTest.swift in Sources */,
 				D058C3441E4072D60086B4A6 /* OfferTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -13,6 +13,7 @@ class OffersViewController: UIViewController {
     
     var delegate: FyberOfferDelegates?
     var options : FYBOfferOptions?
+    var networkManager : NetworkManager?
     var parentController : UIViewController?
     
     
@@ -22,11 +23,11 @@ class OffersViewController: UIViewController {
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var lblNoOffers: UILabel!
-    
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        networkManager = NetworkManager(options: self.options!)
         fetchOffers()
         
     }
@@ -34,9 +35,8 @@ class OffersViewController: UIViewController {
         allOffers = []
         if self.options != nil {
             activityIndicator.startAnimating()
-            let networkManager = NetworkManager(options: self.options!)
-            networkManager.delegate = delegate
-            networkManager.fetchOffers {[weak self] offers in
+            networkManager?.delegate = delegate
+            networkManager?.fetchOffers {[weak self] offers in
                 self?.activityIndicator.stopAnimating()
                 
                 if offers.count > 0 {
@@ -89,20 +89,11 @@ extension OffersViewController : UITableViewDelegate,UITableViewDataSource{
         }
         let currentOffer = allOffers[indexPath.row]
         cell?.lblTitle.text = currentOffer.offerTitle
-        
+        networkManager?.fetchImage(url: currentOffer.offerThumbnail, completion: { (image) in
+            cell?.thumbnailImage.image = image
+        })
         self.delegate?.offerDidLoadOnView!(offer: currentOffer)
-        URLSession.shared.dataTask(with: URL(string: currentOffer.offerThumbnail)!) { (data, response, error) in
-            if error == nil {
-                guard let image = UIImage(data: data!) else { return }
-                DispatchQueue.main.async {
-                    cell?.thumbnailImage.image = image
-
-                }
-                
-            }else{
-                self.delegate?.offersLoadFailedWithError!(error: (error?.localizedDescription)!)
-            }
-        }.resume()
+        
         
         return cell!
     }

@@ -14,7 +14,8 @@ class NetworkManager{
     var delegate : FyberOfferDelegates?
     let options : FYBOfferOptions?
     let baseUrl = "http://api.fyber.com/feed/v1/offers.json?"
-   
+    var imageCache = [String:UIImage]()
+    
     init(options : FYBOfferOptions) {
         self.options = options
     }
@@ -25,8 +26,33 @@ class NetworkManager{
         fetchOffersFromUrl(params: prepopulatedParameters,completion: completion)
         
     }
+    func fetchImage(url: String, completion:@escaping( _ img:UIImage?) -> ()){
+        fetchImageFromUrl(url: url, completion: completion)
+    }
     
     //Private Methods
+    private func fetchImageFromUrl(url:String, completion:@escaping(_ img : UIImage?)-> ()){
+        if  let image = self.imageCache[url] {
+            completion(image)
+        }
+        else{
+            
+            URLSession.shared.dataTask(with: URL(string: url)!) { (data, response, error) in
+                if error == nil {
+                    guard let image = UIImage(data: data!) else { return }
+                    self.imageCache[url] = image
+                    DispatchQueue.main.async {
+                        completion(image)
+                        
+                    }
+                    
+                }else{
+                    completion(nil)
+                    print("image download failed : \(error?.localizedDescription)")
+                }
+                }.resume()
+        }
+    }
     private func fetchOffersFromUrl(params:[(String,String)],completion: @escaping ([FyberOfferModel]) -> Void){
         let requestURL = generateParametersForUrl(params: params)
         if !(requestURL.absoluteString.isEmpty) {

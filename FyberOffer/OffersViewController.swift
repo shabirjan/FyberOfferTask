@@ -31,6 +31,8 @@ class OffersViewController: UIViewController {
         fetchOffers()
         
     }
+    
+    //Method to initiated NetworkManager class to fetch the offers and than display into the TableView
     func fetchOffers(){
         allOffers = []
         if self.options != nil {
@@ -68,15 +70,20 @@ class OffersViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //Close the Controller
     @IBAction func btnClosePressed(_ sender: Any) {
         delegate?.offersDidClose?()
         parentController?.dismiss(animated: true, completion: nil)
     }
     
+    //Refresh the Offers
     @IBAction func refreshOffers(_ sender: Any) {
         fetchOffers()
     }
+    
 }
+
+//UITableView Delegate and DataSource methods
 extension OffersViewController : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 81

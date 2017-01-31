@@ -8,6 +8,8 @@
 
 import Foundation
 
+//This class is responsible for creating the options that will be entered by the user i.e appId, userid, and token key
+
 class FYBOfferOptions {
     let appID : String
     let userID : String

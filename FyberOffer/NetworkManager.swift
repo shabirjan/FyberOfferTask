@@ -20,17 +20,20 @@ class NetworkManager{
         self.options = options
     }
     
-    //Public Method, Only this method will be exposed to Controller
+    //Public Method, Only this method will be exposed to OfferViewController  that will first generate the url by adding the default parameters provided in the challenge   and passing that parameters to private method to fetch the offers by generating the mandatory parameters and this will return the response to the OfferViewController
     func fetchOffers(completion:@escaping ([FyberOfferModel]) -> Void, failure:@escaping (String) -> Void){
         let prepopulatedParameters  = [("format","json"),("local","DE"),("offer_types","112"),("ip","109.235.143.113")]
         fetchOffersFromUrl(params: prepopulatedParameters,completion: completion,failure: failure )
         
     }
+    //Public Method to fetch thumbnail image for each offer by calling private method by providing the url of the image and this will return the image to calling Controller and only this will be exposed to the OfferViewController
     func fetchImage(url: String, completion:@escaping( _ img:UIImage?) -> ()){
         fetchImageFromUrl(url: url, completion: completion)
     }
     
     //Private Methods
+    
+    //Fetch thumbnail image for given url by checking if it is avaiable in the cache or not
     private func fetchImageFromUrl(url:String, completion:@escaping(_ img : UIImage?)-> ()){
         if  let image = self.imageCache[url] {
             completion(image)
@@ -53,6 +56,9 @@ class NetworkManager{
                 }.resume()
         }
     }
+    
+    
+    //Return the offers by using default parameters to generate mandatory parameters and than generate url by hasing (steps provided in the documentation) and checks for the validity of the signature and data as well
     private func fetchOffersFromUrl(params:[(String,String)],completion: @escaping ([FyberOfferModel]) -> Void,failure:@escaping (String) -> Void){
         let requestURL = generateParametersForUrl(params: params)
         if !(requestURL.absoluteString.isEmpty) {
@@ -108,7 +114,7 @@ class NetworkManager{
         
         
     }
-    
+    //Generate URL for mandatory parameters
     private func generateParametersForUrl(params:[(String,String)]) -> URL{
         
         let currentDate = NSDate()
@@ -126,6 +132,7 @@ class NetworkManager{
         return generateURLWithHash(requestString: String(requestString.characters.dropFirst()))!
     }
     
+    //Generate Hash from the parameters and return the URL
     private func generateURLWithHash(requestString : String) -> URL?{
         let sha1 = (requestString + "&" + options!.securityToken).sha1().lowercased()
         if sha1.isEmpty{

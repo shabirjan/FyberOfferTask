@@ -8,6 +8,9 @@
 
 import Foundation
 import SwiftyJSON
+
+
+//Model class for the offer object
 class FyberOfferModel:NSObject{
     
     let offerTitle : String

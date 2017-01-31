@@ -8,6 +8,7 @@
 
 import XCTest
 
+
 class FyberOfferSDKTest: XCTestCase {
     var sdk: NetworkManager?
     override func setUp() {
@@ -32,6 +33,14 @@ class FyberOfferSDKTest: XCTestCase {
         self.measure {
             // Put the code you want to measure the time of here.
         }
+    }
+   
+    func testHashedUrlValues(){
+        
+        let url = sdk?.generateURLWithHash(requestString: "appid=2070&apple_idfa_=2537D187-8C8B-43F8-9CBE-42539ABEB6D6&apple_idfa_tracking_enabled=true&format=json&ip=109.235.143.113&local=DE&offer_types=112&os_version=10.2&timestamp=1485879502&uid=spiderman")
+        
+        XCTAssert(url == URL(string: "http://api.fyber.com/feed/v1/offers.json?appid=2070&apple_idfa_=2537D187-8C8B-43F8-9CBE-42539ABEB6D6&apple_idfa_tracking_enabled=true&format=json&ip=109.235.143.113&local=DE&offer_types=112&os_version=10.2&timestamp=1485879502&uid=spiderman&hashkey=4fceee9d3ca8a62cf8b67c7f514c9716181ccb82"), "true")
+        
     }
     func testOffersFetchRequest(){
         let expectations = expectation(description: "testing offers by fetching from server")
@@ -60,6 +69,7 @@ class FyberOfferSDKTest: XCTestCase {
         })
         waitForExpectations(timeout: 10) { (error) in
             guard let error = error else { return }
+            print(error.localizedDescription)
            
         }
     }

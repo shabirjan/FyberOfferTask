@@ -28,6 +28,7 @@ class OffersViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         networkManager = NetworkManager(options: self.options!)
+        
         fetchOffers()
         
     }

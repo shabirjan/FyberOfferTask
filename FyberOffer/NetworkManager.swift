@@ -133,7 +133,7 @@ class NetworkManager{
     }
     
     //Generate Hash from the parameters and return the URL
-    private func generateURLWithHash(requestString : String) -> URL?{
+    func generateURLWithHash(requestString : String) -> URL?{
         let sha1 = (requestString + "&" + options!.securityToken).sha1().lowercased()
         if sha1.isEmpty{
             return nil

@@ -36,7 +36,7 @@ class OffersViewController: UIViewController {
         if self.options != nil {
             activityIndicator.startAnimating()
             networkManager?.delegate = delegate
-            networkManager?.fetchOffers {[weak self] offers in
+            networkManager?.fetchOffers(completion: { [weak self] offers in
                 self?.activityIndicator.stopAnimating()
                 
                 if offers.count > 0 {
@@ -50,7 +50,9 @@ class OffersViewController: UIViewController {
                     self?.delegate?.offersLoadFailedWithError!(error: "No Offers found")
                     self?.lblNoOffers.isHidden = false
                 }
-            }
+            }, failure: { (error) in
+                self.activityIndicator.stopAnimating()
+            })
         }else{
             self.delegate?.offersLoadFailedWithError!(error: "Invalid Options")
         }

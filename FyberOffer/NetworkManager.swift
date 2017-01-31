@@ -21,9 +21,9 @@ class NetworkManager{
     }
     
     //Public Method, Only this method will be exposed to Controller
-    func fetchOffers(completion:@escaping ([FyberOfferModel]) -> Void){
+    func fetchOffers(completion:@escaping ([FyberOfferModel]) -> Void, failure:@escaping (String) -> Void){
         let prepopulatedParameters  = [("format","json"),("local","DE"),("offer_types","112"),("ip","109.235.143.113")]
-        fetchOffersFromUrl(params: prepopulatedParameters,completion: completion)
+        fetchOffersFromUrl(params: prepopulatedParameters,completion: completion,failure: failure )
         
     }
     func fetchImage(url: String, completion:@escaping( _ img:UIImage?) -> ()){
@@ -53,7 +53,7 @@ class NetworkManager{
                 }.resume()
         }
     }
-    private func fetchOffersFromUrl(params:[(String,String)],completion: @escaping ([FyberOfferModel]) -> Void){
+    private func fetchOffersFromUrl(params:[(String,String)],completion: @escaping ([FyberOfferModel]) -> Void,failure:@escaping (String) -> Void){
         let requestURL = generateParametersForUrl(params: params)
         if !(requestURL.absoluteString.isEmpty) {
             URLSession.shared.dataTask(with: requestURL, completionHandler: { (data, response, error) in
@@ -73,25 +73,37 @@ class NetworkManager{
                                     }
                                     
                                 }else{
+                                    DispatchQueue.main.async {
+                                        failure("")
+                                    }
                                     self.delegate?.offersLoadFailedWithError!(error: "No Offers Found")
                                 }
                             }
                             
                         }else{
+                            DispatchQueue.main.async {
+                                failure("")
+                            }
                             self.delegate?.offersLoadFailedWithError!(error: "Corrupt Data, Signature mismatched")
                         }
                         
                     }else{
+                        DispatchQueue.main.async {
+                            failure("")
+                        }
                         self.delegate?.offersLoadFailedWithError!(error: "No Signature Found in response")
                     }
                 }else{
                     DispatchQueue.main.async {
-                        completion([])
+                        failure("")
                     }
                     self.delegate?.offersLoadFailedWithError?(error: error!.localizedDescription)
                 }
             }).resume()
         }else{
+            DispatchQueue.main.async {
+                failure("")
+            }
             self.delegate?.offersLoadFailedWithError?(error: "URL Error")
         }
         

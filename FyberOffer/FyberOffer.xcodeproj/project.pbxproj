@@ -136,6 +136,30 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D06E53C31E40B7B3005452F6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D0D93C1C1E3F4897003E4E17 /* FyberOfferModel.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		D06E53C41E40B7C9005452F6 /* Offer Options */ = {
+			isa = PBXGroup;
+			children = (
+				D0D93C181E3F3AD7003E4E17 /* FYBOfferOptions.swift */,
+			);
+			name = "Offer Options";
+			sourceTree = "<group>";
+		};
+		D06E53C51E40B7D5005452F6 /* SDK */ = {
+			isa = PBXGroup;
+			children = (
+				D0D93C1A1E3F3C4A003E4E17 /* FyberOfferSDK.swift */,
+			);
+			name = SDK;
+			sourceTree = "<group>";
+		};
 		D0D93BDD1E3F2597003E4E17 = {
 			isa = PBXGroup;
 			children = (
@@ -193,11 +217,11 @@
 		D0D93C171E3F3A2A003E4E17 /* FyberOffSDK */ = {
 			isa = PBXGroup;
 			children = (
+				D06E53C51E40B7D5005452F6 /* SDK */,
+				D06E53C41E40B7C9005452F6 /* Offer Options */,
+				D06E53C31E40B7B3005452F6 /* Model */,
 				D0D93C281E3F620E003E4E17 /* Network */,
 				D0D93C271E3F5BCF003E4E17 /* UI */,
-				D0D93C1A1E3F3C4A003E4E17 /* FyberOfferSDK.swift */,
-				D0D93C1C1E3F4897003E4E17 /* FyberOfferModel.swift */,
-				D0D93C181E3F3AD7003E4E17 /* FYBOfferOptions.swift */,
 			);
 			name = FyberOffSDK;
 			sourceTree = "<group>";

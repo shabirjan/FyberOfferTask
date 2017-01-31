@@ -51,6 +51,8 @@ class OffersViewController: UIViewController {
                     self?.lblNoOffers.isHidden = false
                 }
             }, failure: { (error) in
+                
+                self.lblNoOffers.isHidden = false
                 self.activityIndicator.stopAnimating()
             })
         }else{

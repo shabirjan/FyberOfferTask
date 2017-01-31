@@ -74,30 +74,29 @@ class NetworkManager{
                                     
                                 }else{
                                     DispatchQueue.main.async {
-                                        failure("")
+                                        failure("No Offers Found")
                                     }
-                                    self.delegate?.offersLoadFailedWithError!(error: "No Offers Found")
+                                    
                                 }
                             }
                             
                         }else{
                             DispatchQueue.main.async {
-                                failure("")
+                                failure("Corrupt Data, Signature mismatched")
                             }
-                            self.delegate?.offersLoadFailedWithError!(error: "Corrupt Data, Signature mismatched")
+                            
                         }
                         
                     }else{
                         DispatchQueue.main.async {
-                            failure("")
+                            failure("No Signature Found in response")
                         }
-                        self.delegate?.offersLoadFailedWithError!(error: "No Signature Found in response")
+                        
                     }
                 }else{
                     DispatchQueue.main.async {
-                        failure("")
+                        failure((error?.localizedDescription)!)
                     }
-                    self.delegate?.offersLoadFailedWithError?(error: error!.localizedDescription)
                 }
             }).resume()
         }else{

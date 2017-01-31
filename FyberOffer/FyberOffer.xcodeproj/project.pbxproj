@@ -322,6 +322,7 @@
 				TargetAttributes = {
 					D0D93BE51E3F2597003E4E17 = {
 						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = L67DULCYGJ;
 						ProvisioningStyle = Automatic;
 					};
 					D0D93BF91E3F2597003E4E17 = {
@@ -696,6 +697,7 @@
 			baseConfigurationReference = 11A7B5F040752A922AAB4390 /* Pods-FyberOffer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = L67DULCYGJ;
 				INFOPLIST_FILE = FyberOffer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Shabir.FyberOffer;
@@ -709,6 +711,7 @@
 			baseConfigurationReference = AC773A435BA5097269E4058A /* Pods-FyberOffer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = L67DULCYGJ;
 				INFOPLIST_FILE = FyberOffer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Shabir.FyberOffer;

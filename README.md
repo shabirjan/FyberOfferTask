@@ -37,3 +37,19 @@ sdk.loadOffers(parentController: self)
 ```
 
 
+### Delegates
+These are the delegates that updates about the different events for loading offers
+```swift
+func offersDidLoad()
+func offerDidLoadOnView(offer: FyberOfferModel)
+func offersDidClose()
+func offersRecevied(totalOffers: Int)
+func offersLoadFailedWithError(error: String)
+func userSelectedOffer(offer: FyberOfferModel)
+}
+```
+
+
+
+
+

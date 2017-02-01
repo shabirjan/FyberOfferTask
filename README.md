@@ -1,4 +1,5 @@
 # FyberOfferTask
+This repo contain the code for the Fyber Offer Challenge, and contain 2 folders, ##OfferFrame folder contain code for the SDK that generate a Universal framework that can be integrated in the projects, and ##FyberOffer-Example contains a demo project using the SDK for fetching offers.
 
-This is the code for the Fyber Challenge, this repository contains 2 folders, one contain the SDK and one contain Demo project using that SDK.
+The code has been written in Swift 3 and uses Cocoapods, so before using Demo Example please update the pods
 

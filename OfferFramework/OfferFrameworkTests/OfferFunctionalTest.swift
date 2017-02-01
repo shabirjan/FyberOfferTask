@@ -17,7 +17,7 @@ class OfferFunctionalTest: XCTestCase {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         let storyboard = UIStoryboard(name: "OffersStoryboard", bundle: Bundle(for: OffersViewController.self))
         viewController  =  storyboard.instantiateViewController(withIdentifier: "offerVC") as? OffersViewController
-        viewController.options = FYBOfferOptions(appID: "2070", userID: "spiderman", securityToken: "")
+        viewController.options = FYBOfferOptions(appID: "2070", userID: "spiderman", securityToken: "1c915e3b5d42d05136185030892fbb846c278927")
         
         let _ = viewController.view
         
@@ -38,6 +38,19 @@ class OfferFunctionalTest: XCTestCase {
     }
     func testTableViewConnectedToDelegate(){
         XCTAssertNotNil(viewController.offerTableView.delegate,"Table delegate cannot be nil")
+    }
+    func  testFetchOffers() {
+        let expectations = expectation(description: "testing offers by fetching from server")
+        viewController.fetchOffers()
+        
+        
+        if viewController.allOffers.count>0 {
+            expectations.fulfill()
+        }
+        waitForExpectations(timeout: 5) { (error) in
+            print(error?.localizedDescription)
+        }
+        
     }
   
     

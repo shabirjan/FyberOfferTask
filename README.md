@@ -23,12 +23,12 @@ To use this framework in your project you need to follow these steps
     * Dont forget to add that framework in the embedded binaries as well.
     * Open any ViewController class in which you want to show the Offers, add Import OfferFramework.
     * Use this example code to load offers
-`<
+```swift
 let options = FYBOfferOptions(appID: txtAppID.text!, userID: txtUserID.text!, securityToken: txtToken.text!)
 let sdk = FyberOfferSDK(options: options)
 sdk.delegate = self
 sdk.loadOffers(parentController: self)
->`
+```
 
 # FyberOffer-Example
 

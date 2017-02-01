@@ -27,6 +27,7 @@
 		D0586D171E41BFB200E0B64E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02B02E71E41B358006DE030 /* NetworkManager.swift */; };
 		D0586D181E41BFB400E0B64E /* OffersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02B02E91E41B358006DE030 /* OffersViewController.swift */; };
 		D0586D191E41BFD600E0B64E /* OfferTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02B02EA1E41B358006DE030 /* OfferTableViewCell.swift */; };
+		D0BF756C1E41D5C700DE5DD9 /* OfferFunctionalTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BF756B1E41D5C700DE5DD9 /* OfferFunctionalTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		D02B02EA1E41B358006DE030 /* OfferTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferTableViewCell.swift; sourceTree = "<group>"; };
 		D02B02EB1E41B358006DE030 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		D0586D111E41BF4100E0B64E /* FyberOfferSDKTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FyberOfferSDKTest.swift; sourceTree = "<group>"; };
+		D0BF756B1E41D5C700DE5DD9 /* OfferFunctionalTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferFunctionalTest.swift; sourceTree = "<group>"; };
 		F81D9B9CA7B808006730C1DD /* Pods-OfferFrameworkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfferFrameworkTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OfferFrameworkTests/Pods-OfferFrameworkTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,6 +140,7 @@
 				D02B02D81E41B34F006DE030 /* OfferFrameworkTests.swift */,
 				D02B02DA1E41B34F006DE030 /* Info.plist */,
 				D0586D111E41BF4100E0B64E /* FyberOfferSDKTest.swift */,
+				D0BF756B1E41D5C700DE5DD9 /* OfferFunctionalTest.swift */,
 			);
 			path = OfferFrameworkTests;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 				D0586D151E41BFAD00E0B64E /* FyberOfferSDK.swift in Sources */,
 				D0586D141E41BFAB00E0B64E /* FyberOfferModel.swift in Sources */,
 				D0586D181E41BFB400E0B64E /* OffersViewController.swift in Sources */,
+				D0BF756C1E41D5C700DE5DD9 /* OfferFunctionalTest.swift in Sources */,
 				D0586D161E41BFB000E0B64E /* FYBOfferOptions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -494,9 +498,10 @@
 				INFOPLIST_FILE = OfferFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Shabir.OfferFramework;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
+				SKIP_INSTALL = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -515,9 +520,10 @@
 				INFOPLIST_FILE = OfferFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Shabir.OfferFramework;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
+				SKIP_INSTALL = NO;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

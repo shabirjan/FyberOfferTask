@@ -43,11 +43,13 @@ class ViewController: UIViewController {
     }
 
 }
+
 extension ViewController: UITextFieldDelegate{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         return textField.resignFirstResponder()
     }
 }
+
 extension ViewController: FyberOfferDelegates{
     
     func offersDidLoad() {
@@ -56,7 +58,7 @@ extension ViewController: FyberOfferDelegates{
     }
     func offerDidLoadOnView(offer: FyberOfferModel)
     {
-        print("Offer appeared \(offer.offerTitle)")
+        print("Offer appeared \(offer.offerId.stringValue)")
         
     }
     func offersDidClose() {

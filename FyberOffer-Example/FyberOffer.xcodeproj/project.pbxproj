@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		69F5D49EE272E64883B09ECA /* Pods_FyberOffer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462944A74B82BC096B5709B5 /* Pods_FyberOffer.framework */; };
 		C89877051FAB5BF319E0AC78 /* Pods_FyberOfferUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F94F49F3216E8EB38F2A6767 /* Pods_FyberOfferUITests.framework */; };
-		D03C29F81E41C7E300539FF7 /* OfferFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D03C29F71E41C7E300539FF7 /* OfferFramework.framework */; };
 		D03C29F91E41C7F800539FF7 /* OfferFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D03C29F71E41C7E300539FF7 /* OfferFramework.framework */; };
 		D03C29FA1E41C7F800539FF7 /* OfferFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D03C29F71E41C7E300539FF7 /* OfferFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D0D93BEA1E3F2597003E4E17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D93BE91E3F2597003E4E17 /* AppDelegate.swift */; };
@@ -85,7 +84,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D03C29F91E41C7F800539FF7 /* OfferFramework.framework in Frameworks */,
-				D03C29F81E41C7E300539FF7 /* OfferFramework.framework in Frameworks */,
 				69F5D49EE272E64883B09ECA /* Pods_FyberOffer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

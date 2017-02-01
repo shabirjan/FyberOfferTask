@@ -35,6 +35,7 @@ class OffersViewController: UIViewController {
     
     //Method to initiated NetworkManager class to fetch the offers and than display into the TableView
     func fetchOffers(){
+         self.lblNoOffers.isHidden = true
         allOffers = []
         if self.options != nil {
             activityIndicator.startAnimating()
@@ -60,6 +61,7 @@ class OffersViewController: UIViewController {
                     self.activityIndicator.stopAnimating()
             })
         }else{
+            
             self.delegate?.offersLoadFailedWithError!(error: "Invalid Options")
         }
         

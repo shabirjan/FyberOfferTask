@@ -13,7 +13,7 @@
         <!--Offers View Controller-->
         <scene sceneID="JTv-LK-J2M">
             <objects>
-                <viewController storyboardIdentifier="offerVC" id="rTf-fs-V4p" customClass="OffersViewController" customModule="FyberOffer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="offerVC" id="rTf-fs-V4p" customClass="OffersViewController" customModule="OfferFramework" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HaN-fk-kA8"/>
                         <viewControllerLayoutGuide type="bottom" id="jiN-ey-sHC"/>
@@ -46,7 +46,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="offerCell" rowHeight="81" id="s08-IZ-aXx" customClass="OfferTableViewCell" customModule="FyberOffer" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="offerCell" rowHeight="81" id="s08-IZ-aXx" customClass="OfferTableViewCell" customModule="OfferFramework" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="81"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="s08-IZ-aXx" id="J9b-CA-4xw">
@@ -87,16 +87,17 @@
                                     <outlet property="delegate" destination="rTf-fs-V4p" id="QGh-LL-vGP"/>
                                 </connections>
                             </tableView>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No Offers Available" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BFF-6e-0cM">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="No Offers Available" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BFF-6e-0cM">
                                 <rect key="frame" x="16" y="318" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="acA-2l-571"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="CMQ-d0-owN">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="CMQ-d0-owN">
                                 <rect key="frame" x="177" y="323" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -105,10 +106,14 @@
                             <constraint firstItem="8mv-EW-FhS" firstAttribute="top" secondItem="HaN-fk-kA8" secondAttribute="bottom" id="FSE-8p-sua"/>
                             <constraint firstAttribute="trailing" secondItem="ePg-nY-tFZ" secondAttribute="trailing" id="FrC-QA-o0J"/>
                             <constraint firstAttribute="trailing" secondItem="8mv-EW-FhS" secondAttribute="trailing" id="IQX-4X-xNO"/>
+                            <constraint firstItem="BFF-6e-0cM" firstAttribute="centerY" secondItem="mW4-XR-ZMU" secondAttribute="centerY" id="N0h-TY-MdS"/>
+                            <constraint firstItem="CMQ-d0-owN" firstAttribute="centerY" secondItem="mW4-XR-ZMU" secondAttribute="centerY" id="QgI-wG-Ss0"/>
                             <constraint firstItem="8mv-EW-FhS" firstAttribute="leading" secondItem="mW4-XR-ZMU" secondAttribute="leading" id="VOb-Ur-mGZ"/>
                             <constraint firstItem="jiN-ey-sHC" firstAttribute="top" secondItem="ePg-nY-tFZ" secondAttribute="bottom" id="glK-qd-PxB"/>
                             <constraint firstItem="ePg-nY-tFZ" firstAttribute="top" secondItem="8mv-EW-FhS" secondAttribute="bottom" id="hka-pX-z7K"/>
+                            <constraint firstItem="BFF-6e-0cM" firstAttribute="centerX" secondItem="mW4-XR-ZMU" secondAttribute="centerX" id="nYv-En-1ff"/>
                             <constraint firstItem="ePg-nY-tFZ" firstAttribute="leading" secondItem="mW4-XR-ZMU" secondAttribute="leading" id="pcF-Nz-VBQ"/>
+                            <constraint firstItem="CMQ-d0-owN" firstAttribute="centerX" secondItem="mW4-XR-ZMU" secondAttribute="centerX" id="wvI-QY-GXP"/>
                         </constraints>
                     </view>
                     <connections>

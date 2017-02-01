@@ -1,0 +1,10 @@
+framework module OfferFramework {
+  umbrella header "OfferFramework.h"
+
+  export *
+  module * { export * }
+}
+
+module OfferFramework.Swift {
+    header "OfferFramework-Swift.h"
+}

@@ -1,0 +1,584 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		154006CABEAD8086F4991DAE /* Pods_OfferFrameworkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83A6C9CB340E266FA8F18F0E /* Pods_OfferFrameworkTests.framework */; };
+		464F2CAE4634FE08654D352B /* Pods_OfferFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53723EB8D74D889417F053F2 /* Pods_OfferFramework.framework */; };
+		D024C53E1E41BA0800EAC79E /* OffersStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D02B02E81E41B358006DE030 /* OffersStoryboard.storyboard */; };
+		D02B02D41E41B34F006DE030 /* OfferFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D02B02CA1E41B34F006DE030 /* OfferFramework.framework */; };
+		D02B02D91E41B34F006DE030 /* OfferFrameworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02B02D81E41B34F006DE030 /* OfferFrameworkTests.swift */; };
+		D02B02DB1E41B34F006DE030 /* OfferFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = D02B02CD1E41B34F006DE030 /* OfferFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D02B02EC1E41B358006DE030 /* FyberOfferModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02B02E41E41B358006DE030 /* FyberOfferModel.swift */; };
+		D02B02ED1E41B358006DE030 /* FyberOfferSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02B02E51E41B358006DE030 /* FyberOfferSDK.swift */; };
+		D02B02EE1E41B358006DE030 /* FYBOfferOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02B02E61E41B358006DE030 /* FYBOfferOptions.swift */; };
+		D02B02EF1E41B358006DE030 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02B02E71E41B358006DE030 /* NetworkManager.swift */; };
+		D02B02F11E41B358006DE030 /* OffersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02B02E91E41B358006DE030 /* OffersViewController.swift */; };
+		D02B02F21E41B358006DE030 /* OfferTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02B02EA1E41B358006DE030 /* OfferTableViewCell.swift */; };
+		D02B02F31E41B358006DE030 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = D02B02EB1E41B358006DE030 /* placeholder.png */; };
+		D0586D121E41BF4100E0B64E /* FyberOfferSDKTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0586D111E41BF4100E0B64E /* FyberOfferSDKTest.swift */; };
+		D0586D141E41BFAB00E0B64E /* FyberOfferModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02B02E41E41B358006DE030 /* FyberOfferModel.swift */; };
+		D0586D151E41BFAD00E0B64E /* FyberOfferSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02B02E51E41B358006DE030 /* FyberOfferSDK.swift */; };
+		D0586D161E41BFB000E0B64E /* FYBOfferOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02B02E61E41B358006DE030 /* FYBOfferOptions.swift */; };
+		D0586D171E41BFB200E0B64E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02B02E71E41B358006DE030 /* NetworkManager.swift */; };
+		D0586D181E41BFB400E0B64E /* OffersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02B02E91E41B358006DE030 /* OffersViewController.swift */; };
+		D0586D191E41BFD600E0B64E /* OfferTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02B02EA1E41B358006DE030 /* OfferTableViewCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D02B02D51E41B34F006DE030 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D02B02C11E41B34F006DE030 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D02B02C91E41B34F006DE030;
+			remoteInfo = OfferFramework;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		21C4E955B06DBEF5CBADEECA /* Pods-OfferFrameworkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfferFrameworkTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OfferFrameworkTests/Pods-OfferFrameworkTests.release.xcconfig"; sourceTree = "<group>"; };
+		53723EB8D74D889417F053F2 /* Pods_OfferFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OfferFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E8499E3747EAC605A86AAA0 /* Pods-OfferFramework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfferFramework.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OfferFramework/Pods-OfferFramework.debug.xcconfig"; sourceTree = "<group>"; };
+		83A6C9CB340E266FA8F18F0E /* Pods_OfferFrameworkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OfferFrameworkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC11A3846168A37BA5C0C403 /* Pods-OfferFramework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfferFramework.release.xcconfig"; path = "Pods/Target Support Files/Pods-OfferFramework/Pods-OfferFramework.release.xcconfig"; sourceTree = "<group>"; };
+		D02B02CA1E41B34F006DE030 /* OfferFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OfferFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D02B02CD1E41B34F006DE030 /* OfferFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OfferFramework.h; sourceTree = "<group>"; };
+		D02B02CE1E41B34F006DE030 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D02B02D31E41B34F006DE030 /* OfferFrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OfferFrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D02B02D81E41B34F006DE030 /* OfferFrameworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferFrameworkTests.swift; sourceTree = "<group>"; };
+		D02B02DA1E41B34F006DE030 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D02B02E41E41B358006DE030 /* FyberOfferModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FyberOfferModel.swift; sourceTree = "<group>"; };
+		D02B02E51E41B358006DE030 /* FyberOfferSDK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FyberOfferSDK.swift; sourceTree = "<group>"; };
+		D02B02E61E41B358006DE030 /* FYBOfferOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FYBOfferOptions.swift; sourceTree = "<group>"; };
+		D02B02E71E41B358006DE030 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		D02B02E81E41B358006DE030 /* OffersStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OffersStoryboard.storyboard; sourceTree = "<group>"; };
+		D02B02E91E41B358006DE030 /* OffersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffersViewController.swift; sourceTree = "<group>"; };
+		D02B02EA1E41B358006DE030 /* OfferTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferTableViewCell.swift; sourceTree = "<group>"; };
+		D02B02EB1E41B358006DE030 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
+		D0586D111E41BF4100E0B64E /* FyberOfferSDKTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FyberOfferSDKTest.swift; sourceTree = "<group>"; };
+		F81D9B9CA7B808006730C1DD /* Pods-OfferFrameworkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfferFrameworkTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OfferFrameworkTests/Pods-OfferFrameworkTests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D02B02C61E41B34F006DE030 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				464F2CAE4634FE08654D352B /* Pods_OfferFramework.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D02B02D01E41B34F006DE030 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D02B02D41E41B34F006DE030 /* OfferFramework.framework in Frameworks */,
+				154006CABEAD8086F4991DAE /* Pods_OfferFrameworkTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BB9403430F51DEA739079595 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7E8499E3747EAC605A86AAA0 /* Pods-OfferFramework.debug.xcconfig */,
+				AC11A3846168A37BA5C0C403 /* Pods-OfferFramework.release.xcconfig */,
+				F81D9B9CA7B808006730C1DD /* Pods-OfferFrameworkTests.debug.xcconfig */,
+				21C4E955B06DBEF5CBADEECA /* Pods-OfferFrameworkTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D02B02C01E41B34F006DE030 = {
+			isa = PBXGroup;
+			children = (
+				D02B02CC1E41B34F006DE030 /* OfferFramework */,
+				D02B02D71E41B34F006DE030 /* OfferFrameworkTests */,
+				D02B02CB1E41B34F006DE030 /* Products */,
+				BB9403430F51DEA739079595 /* Pods */,
+				D26028B680480C82FAE11B7D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D02B02CB1E41B34F006DE030 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D02B02CA1E41B34F006DE030 /* OfferFramework.framework */,
+				D02B02D31E41B34F006DE030 /* OfferFrameworkTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D02B02CC1E41B34F006DE030 /* OfferFramework */ = {
+			isa = PBXGroup;
+			children = (
+				D02B02E41E41B358006DE030 /* FyberOfferModel.swift */,
+				D02B02E51E41B358006DE030 /* FyberOfferSDK.swift */,
+				D02B02E61E41B358006DE030 /* FYBOfferOptions.swift */,
+				D02B02E71E41B358006DE030 /* NetworkManager.swift */,
+				D02B02E81E41B358006DE030 /* OffersStoryboard.storyboard */,
+				D02B02E91E41B358006DE030 /* OffersViewController.swift */,
+				D02B02EA1E41B358006DE030 /* OfferTableViewCell.swift */,
+				D02B02EB1E41B358006DE030 /* placeholder.png */,
+				D02B02CD1E41B34F006DE030 /* OfferFramework.h */,
+				D02B02CE1E41B34F006DE030 /* Info.plist */,
+			);
+			path = OfferFramework;
+			sourceTree = "<group>";
+		};
+		D02B02D71E41B34F006DE030 /* OfferFrameworkTests */ = {
+			isa = PBXGroup;
+			children = (
+				D02B02D81E41B34F006DE030 /* OfferFrameworkTests.swift */,
+				D02B02DA1E41B34F006DE030 /* Info.plist */,
+				D0586D111E41BF4100E0B64E /* FyberOfferSDKTest.swift */,
+			);
+			path = OfferFrameworkTests;
+			sourceTree = "<group>";
+		};
+		D26028B680480C82FAE11B7D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				53723EB8D74D889417F053F2 /* Pods_OfferFramework.framework */,
+				83A6C9CB340E266FA8F18F0E /* Pods_OfferFrameworkTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D02B02C71E41B34F006DE030 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D02B02DB1E41B34F006DE030 /* OfferFramework.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D02B02C91E41B34F006DE030 /* OfferFramework */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D02B02DE1E41B34F006DE030 /* Build configuration list for PBXNativeTarget "OfferFramework" */;
+			buildPhases = (
+				8391FFAB6EA8F91A97B4F3FB /* [CP] Check Pods Manifest.lock */,
+				D02B02C51E41B34F006DE030 /* Sources */,
+				D02B02C61E41B34F006DE030 /* Frameworks */,
+				D02B02C71E41B34F006DE030 /* Headers */,
+				D02B02C81E41B34F006DE030 /* Resources */,
+				F8C9529F91820C37E355BA6A /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OfferFramework;
+			productName = OfferFramework;
+			productReference = D02B02CA1E41B34F006DE030 /* OfferFramework.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D02B02D21E41B34F006DE030 /* OfferFrameworkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D02B02E11E41B34F006DE030 /* Build configuration list for PBXNativeTarget "OfferFrameworkTests" */;
+			buildPhases = (
+				2B55C2BD8CED2F44A7B4141A /* [CP] Check Pods Manifest.lock */,
+				D02B02CF1E41B34F006DE030 /* Sources */,
+				D02B02D01E41B34F006DE030 /* Frameworks */,
+				D02B02D11E41B34F006DE030 /* Resources */,
+				13FA7F87DBC19FF62760F7C6 /* [CP] Embed Pods Frameworks */,
+				E3FB17F8DCCCFC3EC2C3587D /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D02B02D61E41B34F006DE030 /* PBXTargetDependency */,
+			);
+			name = OfferFrameworkTests;
+			productName = OfferFrameworkTests;
+			productReference = D02B02D31E41B34F006DE030 /* OfferFrameworkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D02B02C11E41B34F006DE030 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Shabir Jan";
+				TargetAttributes = {
+					D02B02C91E41B34F006DE030 = {
+						CreatedOnToolsVersion = 8.2;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
+					};
+					D02B02D21E41B34F006DE030 = {
+						CreatedOnToolsVersion = 8.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = D02B02C41E41B34F006DE030 /* Build configuration list for PBXProject "OfferFramework" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D02B02C01E41B34F006DE030;
+			productRefGroup = D02B02CB1E41B34F006DE030 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D02B02C91E41B34F006DE030 /* OfferFramework */,
+				D02B02D21E41B34F006DE030 /* OfferFrameworkTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D02B02C81E41B34F006DE030 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D024C53E1E41BA0800EAC79E /* OffersStoryboard.storyboard in Resources */,
+				D02B02F31E41B358006DE030 /* placeholder.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D02B02D11E41B34F006DE030 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		13FA7F87DBC19FF62760F7C6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OfferFrameworkTests/Pods-OfferFrameworkTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2B55C2BD8CED2F44A7B4141A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8391FFAB6EA8F91A97B4F3FB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E3FB17F8DCCCFC3EC2C3587D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OfferFrameworkTests/Pods-OfferFrameworkTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F8C9529F91820C37E355BA6A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OfferFramework/Pods-OfferFramework-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D02B02C51E41B34F006DE030 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D02B02F21E41B358006DE030 /* OfferTableViewCell.swift in Sources */,
+				D02B02EF1E41B358006DE030 /* NetworkManager.swift in Sources */,
+				D02B02ED1E41B358006DE030 /* FyberOfferSDK.swift in Sources */,
+				D02B02EE1E41B358006DE030 /* FYBOfferOptions.swift in Sources */,
+				D02B02EC1E41B358006DE030 /* FyberOfferModel.swift in Sources */,
+				D02B02F11E41B358006DE030 /* OffersViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D02B02CF1E41B34F006DE030 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0586D191E41BFD600E0B64E /* OfferTableViewCell.swift in Sources */,
+				D0586D171E41BFB200E0B64E /* NetworkManager.swift in Sources */,
+				D0586D121E41BF4100E0B64E /* FyberOfferSDKTest.swift in Sources */,
+				D02B02D91E41B34F006DE030 /* OfferFrameworkTests.swift in Sources */,
+				D0586D151E41BFAD00E0B64E /* FyberOfferSDK.swift in Sources */,
+				D0586D141E41BFAB00E0B64E /* FyberOfferModel.swift in Sources */,
+				D0586D181E41BFB400E0B64E /* OffersViewController.swift in Sources */,
+				D0586D161E41BFB000E0B64E /* FYBOfferOptions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D02B02D61E41B34F006DE030 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D02B02C91E41B34F006DE030 /* OfferFramework */;
+			targetProxy = D02B02D51E41B34F006DE030 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D02B02DC1E41B34F006DE030 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D02B02DD1E41B34F006DE030 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D02B02DF1E41B34F006DE030 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E8499E3747EAC605A86AAA0 /* Pods-OfferFramework.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = OfferFramework/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Shabir.OfferFramework;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		D02B02E01E41B34F006DE030 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC11A3846168A37BA5C0C403 /* Pods-OfferFramework.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = OfferFramework/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Shabir.OfferFramework;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		D02B02E21E41B34F006DE030 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F81D9B9CA7B808006730C1DD /* Pods-OfferFrameworkTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = OfferFrameworkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Shabir.OfferFrameworkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		D02B02E31E41B34F006DE030 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 21C4E955B06DBEF5CBADEECA /* Pods-OfferFrameworkTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = OfferFrameworkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Shabir.OfferFrameworkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D02B02C41E41B34F006DE030 /* Build configuration list for PBXProject "OfferFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D02B02DC1E41B34F006DE030 /* Debug */,
+				D02B02DD1E41B34F006DE030 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D02B02DE1E41B34F006DE030 /* Build configuration list for PBXNativeTarget "OfferFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D02B02DF1E41B34F006DE030 /* Debug */,
+				D02B02E01E41B34F006DE030 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D02B02E11E41B34F006DE030 /* Build configuration list for PBXNativeTarget "OfferFrameworkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D02B02E21E41B34F006DE030 /* Debug */,
+				D02B02E31E41B34F006DE030 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D02B02C11E41B34F006DE030 /* Project object */;
+}

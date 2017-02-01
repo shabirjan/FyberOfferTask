@@ -19,6 +19,10 @@
 		D0D93BF41E3F2597003E4E17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0D93BF21E3F2597003E4E17 /* LaunchScreen.storyboard */; };
 		D0D93BFF1E3F2597003E4E17 /* FyberOfferTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D93BFE1E3F2597003E4E17 /* FyberOfferTests.swift */; };
 		D0D93C0A1E3F2597003E4E17 /* FyberOfferUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D93C091E3F2597003E4E17 /* FyberOfferUITests.swift */; };
+		D0F1E4D51E420AF90067BB97 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D93BEB1E3F2597003E4E17 /* ViewController.swift */; };
+		D0F1E4D71E420B030067BB97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D93BE91E3F2597003E4E17 /* AppDelegate.swift */; };
+		D0F1E4D81E420B460067BB97 /* OfferFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0BF2D7F1E41F6CB0089A761 /* OfferFramework.framework */; };
+		D0F1E4D91E420B8F0067BB97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0D93BED1E3F2597003E4E17 /* Main.storyboard */; };
 		F92DC32D338F49A15F897B10 /* Pods_FyberOfferTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 897A67F2CE0E322C8726042D /* Pods_FyberOfferTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0F1E4D81E420B460067BB97 /* OfferFramework.framework in Frameworks */,
 				F92DC32D338F49A15F897B10 /* Pods_FyberOfferTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,6 +319,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0F1E4D91E420B8F0067BB97 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,6 +484,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0F1E4D71E420B030067BB97 /* AppDelegate.swift in Sources */,
+				D0F1E4D51E420AF90067BB97 /* ViewController.swift in Sources */,
 				D0D93BFF1E3F2597003E4E17 /* FyberOfferTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -660,6 +668,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FyberOffer",
+				);
 				INFOPLIST_FILE = FyberOfferTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Shabir.FyberOfferTests;
@@ -675,6 +687,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FyberOffer",
+				);
 				INFOPLIST_FILE = FyberOfferTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Shabir.FyberOfferTests;

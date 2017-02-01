@@ -27,7 +27,9 @@
 		D0586D171E41BFB200E0B64E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02B02E71E41B358006DE030 /* NetworkManager.swift */; };
 		D0586D181E41BFB400E0B64E /* OffersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02B02E91E41B358006DE030 /* OffersViewController.swift */; };
 		D0586D191E41BFD600E0B64E /* OfferTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02B02EA1E41B358006DE030 /* OfferTableViewCell.swift */; };
-		D0BF756C1E41D5C700DE5DD9 /* OfferFunctionalTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BF756B1E41D5C700DE5DD9 /* OfferFunctionalTest.swift */; };
+		D0F1E4D31E4209AD0067BB97 /* OffersStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D02B02E81E41B358006DE030 /* OffersStoryboard.storyboard */; };
+		D0F1E4D41E4209E20067BB97 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = D02B02EB1E41B358006DE030 /* placeholder.png */; };
+		D0F1E4DA1E420BD60067BB97 /* OfferFunctionalTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BF756B1E41D5C700DE5DD9 /* OfferFunctionalTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -262,6 +264,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0F1E4D31E4209AD0067BB97 /* OffersStoryboard.storyboard in Resources */,
+				D0F1E4D41E4209E20067BB97 /* placeholder.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,7 +374,7 @@
 				D0586D151E41BFAD00E0B64E /* FyberOfferSDK.swift in Sources */,
 				D0586D141E41BFAB00E0B64E /* FyberOfferModel.swift in Sources */,
 				D0586D181E41BFB400E0B64E /* OffersViewController.swift in Sources */,
-				D0BF756C1E41D5C700DE5DD9 /* OfferFunctionalTest.swift in Sources */,
+				D0F1E4DA1E420BD60067BB97 /* OfferFunctionalTest.swift in Sources */,
 				D0586D161E41BFB000E0B64E /* FYBOfferOptions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

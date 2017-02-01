@@ -11,7 +11,7 @@ import UIKit
 class OffersViewController: UIViewController {
     
     
-    var delegate: FyberOfferDelegates?
+    var delegate: FyberOfferDelegate?
     var options : FYBOfferOptions?
     var networkManager : NetworkManager?
     var parentController : UIViewController?

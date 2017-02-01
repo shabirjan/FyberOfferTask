@@ -11,7 +11,7 @@ import AdSupport
 import CryptoSwift
 import SwiftyJSON
 class NetworkManager{
-    var delegate : FyberOfferDelegates?
+    var delegate : FyberOfferDelegate?
     let options : FYBOfferOptions?
     let baseUrl = "http://api.fyber.com/feed/v1/offers.json?"
     var imageCache = [String:UIImage]()

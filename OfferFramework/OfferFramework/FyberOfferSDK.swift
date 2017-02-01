@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 //MARK : Optional Delegates that will update users regarding offers fetch
-@objc public protocol FyberOfferDelegates
+@objc public protocol FyberOfferDelegate
 {
     //Offers are fetched and loaded into TableView
     @objc optional func offersDidLoad()
@@ -35,7 +35,7 @@ import UIKit
 public class FyberOfferSDK{
     
     let fybOptions : FYBOfferOptions
-    public var delegate : FyberOfferDelegates?
+    public var delegate : FyberOfferDelegate?
     
     public init(options:FYBOfferOptions) {
         fybOptions = options

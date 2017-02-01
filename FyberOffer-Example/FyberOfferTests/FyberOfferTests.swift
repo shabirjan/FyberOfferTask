@@ -13,7 +13,7 @@ class FyberOfferTests: XCTestCase {
     var viewController : ViewController!
     override func setUp() {
         super.setUp()
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle(for: ViewController.self))
+       
         
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }

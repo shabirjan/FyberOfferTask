@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		69F5D49EE272E64883B09ECA /* Pods_FyberOffer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462944A74B82BC096B5709B5 /* Pods_FyberOffer.framework */; };
 		C89877051FAB5BF319E0AC78 /* Pods_FyberOfferUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F94F49F3216E8EB38F2A6767 /* Pods_FyberOfferUITests.framework */; };
-		D03C29F91E41C7F800539FF7 /* OfferFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D03C29F71E41C7E300539FF7 /* OfferFramework.framework */; };
-		D03C29FA1E41C7F800539FF7 /* OfferFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D03C29F71E41C7E300539FF7 /* OfferFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D0BF2D801E41F6CB0089A761 /* OfferFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0BF2D7F1E41F6CB0089A761 /* OfferFramework.framework */; };
+		D0BF2D811E41F6CD0089A761 /* OfferFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0BF2D7F1E41F6CB0089A761 /* OfferFramework.framework */; };
+		D0BF2D821E41F6CD0089A761 /* OfferFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D0BF2D7F1E41F6CB0089A761 /* OfferFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D0D93BEA1E3F2597003E4E17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D93BE91E3F2597003E4E17 /* AppDelegate.swift */; };
 		D0D93BEC1E3F2597003E4E17 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D93BEB1E3F2597003E4E17 /* ViewController.swift */; };
 		D0D93BEF1E3F2597003E4E17 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0D93BED1E3F2597003E4E17 /* Main.storyboard */; };
@@ -45,7 +46,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D03C29FA1E41C7F800539FF7 /* OfferFramework.framework in Embed Frameworks */,
+				D0BF2D821E41F6CD0089A761 /* OfferFramework.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -61,7 +62,7 @@
 		7D6A22C1E268D313C2659BA5 /* Pods-FyberOfferTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FyberOfferTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FyberOfferTests/Pods-FyberOfferTests.debug.xcconfig"; sourceTree = "<group>"; };
 		897A67F2CE0E322C8726042D /* Pods_FyberOfferTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FyberOfferTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC773A435BA5097269E4058A /* Pods-FyberOffer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FyberOffer.release.xcconfig"; path = "Pods/Target Support Files/Pods-FyberOffer/Pods-FyberOffer.release.xcconfig"; sourceTree = "<group>"; };
-		D03C29F71E41C7E300539FF7 /* OfferFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OfferFramework.framework; sourceTree = "<group>"; };
+		D0BF2D7F1E41F6CB0089A761 /* OfferFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OfferFramework.framework; sourceTree = "<group>"; };
 		D0D93BE61E3F2597003E4E17 /* FyberOffer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FyberOffer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0D93BE91E3F2597003E4E17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0D93BEB1E3F2597003E4E17 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -83,7 +84,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D03C29F91E41C7F800539FF7 /* OfferFramework.framework in Frameworks */,
+				D0BF2D811E41F6CD0089A761 /* OfferFramework.framework in Frameworks */,
+				D0BF2D801E41F6CB0089A761 /* OfferFramework.framework in Frameworks */,
 				69F5D49EE272E64883B09ECA /* Pods_FyberOffer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -155,7 +157,7 @@
 		D0D93BE81E3F2597003E4E17 /* FyberOffer */ = {
 			isa = PBXGroup;
 			children = (
-				D03C29F71E41C7E300539FF7 /* OfferFramework.framework */,
+				D0BF2D7F1E41F6CB0089A761 /* OfferFramework.framework */,
 				D0D93BE91E3F2597003E4E17 /* AppDelegate.swift */,
 				D0D93BEB1E3F2597003E4E17 /* ViewController.swift */,
 				D0D93BED1E3F2597003E4E17 /* Main.storyboard */,

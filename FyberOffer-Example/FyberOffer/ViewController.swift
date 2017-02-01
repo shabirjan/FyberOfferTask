@@ -50,7 +50,7 @@ extension ViewController: UITextFieldDelegate{
     }
 }
 
-extension ViewController: FyberOfferDelegates{
+extension ViewController: FyberOfferDelegate{
     
     func offersDidLoad() {
         print("Offers fetched")
@@ -59,7 +59,7 @@ extension ViewController: FyberOfferDelegates{
     func offerDidLoadOnView(offer: FyberOfferModel)
     {
         print("Offer appeared \(offer.offerId.stringValue)")
-        
+         
     }
     func offersDidClose() {
         print("Offers closed")

@@ -1,7 +1,7 @@
-# FyberOfferTask
-The code has been written in Swift version 3 and uses Cocoapods, so before using Demo Example please update the pods
+# Fyber Offer Challenge
+The code has been written in Swift version 3 and uses Cocoapods for installing dependencies.
 
-This repo contain the code for the Fyber Offer Challenge, and contain 2 folders, OfferFramework folder contain code for the SDK that generate a Universal framework that can be integrated in the projects, and FyberOffer-Example contains a demo project using the SDK for fetching offers.
+This repository contain the code for the `Fyber Offer Challenge`, and contain 2 folders, `OfferFramework` folder contain code for the SDK that generate a Universal framework that can be integrated in the projects, and `FyberOffer-Example` contains a demo project using the SDK for fetching offers.
 
 
 # FyberOffer
@@ -38,7 +38,7 @@ sdk.loadOffers(parentController: self)
 
 
 ### Delegates
-These are the delegates that updates about the different events for loading offers
+These are the delegates that updates the Controller about the different events for loading offers
 ```swift
 func offersDidLoad()
 func offerDidLoadOnView(offer: FyberOfferModel)
@@ -46,9 +46,14 @@ func offersDidClose()
 func offersRecevied(totalOffers: Int)
 func offersLoadFailedWithError(error: String)
 func userSelectedOffer(offer: FyberOfferModel)
-}
 ```
 
+### Testing
+This Project also include unit tests that check whether network calls are working fine or not and also whether the request parameters are generating correct url or not also contain test that check whether the ViewController is being loaded or not and chech the functionality of that Offer View Controller. 
+
+# FyberOffer-Example
+
+This folder contain a demo project that uses the `OfferFramework` to load the offers, please update the pods before using the demo project.
 
 
 

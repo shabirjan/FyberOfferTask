@@ -55,7 +55,7 @@ class OffersViewController: UIViewController {
                     self?.lblNoOffers.isHidden = false
                 }
                 }, failure: { (error) in
-                    
+                    self.offerTableView.isHidden = true
                     self.lblNoOffers.isHidden = false
                     self.delegate?.offersLoadFailedWithError!(error: error)
                     self.activityIndicator.stopAnimating()

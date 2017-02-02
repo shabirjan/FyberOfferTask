@@ -10,6 +10,8 @@
 		69F5D49EE272E64883B09ECA /* Pods_FyberOffer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462944A74B82BC096B5709B5 /* Pods_FyberOffer.framework */; };
 		C89877051FAB5BF319E0AC78 /* Pods_FyberOfferUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F94F49F3216E8EB38F2A6767 /* Pods_FyberOfferUITests.framework */; };
 		D02A20FD1E4367F2002EA621 /* OfferFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D02A20FC1E4367F2002EA621 /* OfferFramework.framework */; };
+		D02A20FE1E436822002EA621 /* OfferFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D02A20FC1E4367F2002EA621 /* OfferFramework.framework */; };
+		D02A20FF1E436822002EA621 /* OfferFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D02A20FC1E4367F2002EA621 /* OfferFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D0D93BEA1E3F2597003E4E17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D93BE91E3F2597003E4E17 /* AppDelegate.swift */; };
 		D0D93BEC1E3F2597003E4E17 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D93BEB1E3F2597003E4E17 /* ViewController.swift */; };
 		D0D93BEF1E3F2597003E4E17 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0D93BED1E3F2597003E4E17 /* Main.storyboard */; };
@@ -39,6 +41,20 @@
 			remoteInfo = FyberOffer;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D02A21001E436822002EA621 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D02A20FF1E436822002EA621 /* OfferFramework.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		038A436FB9DE5CB7483DC34B /* Pods-FyberOfferUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FyberOfferUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FyberOfferUITests/Pods-FyberOfferUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -71,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D02A20FE1E436822002EA621 /* OfferFramework.framework in Frameworks */,
 				D02A20FD1E4367F2002EA621 /* OfferFramework.framework in Frameworks */,
 				69F5D49EE272E64883B09ECA /* Pods_FyberOffer.framework in Frameworks */,
 			);
@@ -185,6 +202,7 @@
 				D0D93BE41E3F2597003E4E17 /* Resources */,
 				4474ED68442E7453BB5B6634 /* [CP] Embed Pods Frameworks */,
 				1C08173C21DE581989E11A98 /* [CP] Copy Pods Resources */,
+				D02A21001E436822002EA621 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

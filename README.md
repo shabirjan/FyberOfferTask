@@ -38,7 +38,7 @@ sdk.loadOffers(parentController: self)
 
 
 ### Delegates
-These are the delegates that updates the Controller about the different events for loading offers
+These are the optional delegates that updates the Controller about the different events for loading offers
 ```swift
 func offersDidLoad()
 func offerDidLoadOnView(offer: FyberOfferModel)

@@ -45,24 +45,24 @@ class OffersViewController: UIViewController {
                 
                 if offers.count > 0 {
                     self?.allOffers = offers
-                    self?.delegate?.offersRecevied!(totalOffers: offers.count)
+                    self?.delegate?.offersRecevied?(totalOffers: offers.count)
                     self?.offerTableView.isHidden = false
                     self?.offerTableView.reloadData()
-                    self?.delegate?.offersDidLoad!()
+                    self?.delegate?.offersDidLoad?()
                 }
                 else{
-                    self?.delegate?.offersLoadFailedWithError!(error: "No Offers found")
+                    self?.delegate?.offersLoadFailedWithError?(error: "No Offers found")
                     self?.lblNoOffers.isHidden = false
                 }
                 }, failure: { (error) in
                     self.offerTableView.isHidden = true
                     self.lblNoOffers.isHidden = false
-                    self.delegate?.offersLoadFailedWithError!(error: error)
+                    self.delegate?.offersLoadFailedWithError?(error: error)
                     self.activityIndicator.stopAnimating()
             })
         }else{
             
-            self.delegate?.offersLoadFailedWithError!(error: "Invalid Options")
+            self.delegate?.offersLoadFailedWithError?(error: "Invalid Options")
         }
         
         
@@ -114,7 +114,7 @@ extension OffersViewController : UITableViewDelegate,UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedOffer = self.allOffers[indexPath.row]
-        self.delegate?.userSelectedOffer!(offer: selectedOffer)
+        self.delegate?.userSelectedOffer?(offer: selectedOffer)
         
     }
 }

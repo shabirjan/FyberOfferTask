@@ -61,19 +61,6 @@ extension ViewController: FyberOfferDelegate{
         print("Offer appeared \(offer.offerId.stringValue)")
          
     }
-    func offersDidClose() {
-        print("Offers closed")
-    }
-   
-    func offersRecevied(totalOffers: Int) {
-        print("total offers are \(totalOffers)")
-    }
-    func offersLoadFailedWithError(error: String) {
-        print("Offer failed to load due to \(error)")
-    }
-    func userSelectedOffer(offer: FyberOfferModel) {
-        print("User selected offer \(offer.offerTitle)")
-    }
-    
+        
     
 }

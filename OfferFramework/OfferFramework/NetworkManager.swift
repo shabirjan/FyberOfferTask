@@ -39,14 +39,13 @@ class NetworkManager{
         else{
             
             URLSession.shared.dataTask(with: URL(string: url)!) { (data, response, error) in
+                
                 if error == nil {
                     guard let image = UIImage(data: data!) else { return }
                     self.imageCache[url] = image
                     DispatchQueue.main.async {
                         completion(image)
-                        
                     }
-                    
                 }else{
                     completion(nil)
                     print("image download failed : \(error?.localizedDescription)")
@@ -63,39 +62,34 @@ class NetworkManager{
             URLSession.shared.dataTask(with: requestURL, completionHandler: { (data, response, error) in
                 if error == nil{
                     guard let data = data else { return  }
-                    if let sigatureValue = (response! as! HTTPURLResponse).allHeaderFields["X-Sponsorpay-Response-Signature"] as? String{
-                        
-                        let strData = String(data: data, encoding: String.Encoding.utf8)
-                        let sha1 = (strData! + (self.options?.securityToken)!).sha1().lowercased()
-                        
-                        if sha1 == sigatureValue{
-                            let allOffers = JSON(data:data)["offers"]
-                            if allOffers.type == Type.array{
-                                if allOffers.arrayValue.count > 0{
-                                    DispatchQueue.main.async {
-                                        completion(allOffers.arrayValue.flatMap(FyberOfferModel.init(offerDictionary:)))
-                                    }
-                                    
-                                }else{
-                                    DispatchQueue.main.async {
-                                        failure("No Offers Found")
-                                    }
-                                    
-                                }
+                    guard let signatureValue = (response! as! HTTPURLResponse).allHeaderFields["X-Sponsorpay-Response-Signature"] as? String else {
+                        DispatchQueue.main.async {
+                            failure("No Signature Found in response")
+                        }
+                        return
+                    }
+                    let strData = String(data: data, encoding: String.Encoding.utf8)
+                    let sha1 = (strData! + (self.options?.securityToken)!).sha1().lowercased()
+                    
+                    guard  sha1 == signatureValue else {
+                        DispatchQueue.main.async {
+                            failure("Corrupt Data, Signature mismatched")
+                        }
+                        return
+                    }
+                    let allOffers = JSON(data:data)["offers"]
+                    if allOffers.type == Type.array{
+                        if allOffers.arrayValue.count > 0{
+                            DispatchQueue.main.async {
+                                completion(allOffers.arrayValue.flatMap(FyberOfferModel.init(offerDictionary:)))
                             }
                             
                         }else{
                             DispatchQueue.main.async {
-                                failure("Corrupt Data, Signature mismatched")
+                                failure("No Offers Found")
                             }
                             
                         }
-                        
-                    }else{
-                        DispatchQueue.main.async {
-                            failure("No Signature Found in response")
-                        }
-                        
                     }
                 }else{
                     DispatchQueue.main.async {

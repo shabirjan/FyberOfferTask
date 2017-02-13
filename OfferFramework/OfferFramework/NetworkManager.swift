@@ -11,7 +11,6 @@ import AdSupport
 import CryptoSwift
 import SwiftyJSON
 class NetworkManager{
-    var delegate : FyberOfferDelegate?
     let options : FYBOfferOptions?
     let baseUrl = "http://api.fyber.com/feed/v1/offers.json?"
     var imageCache = [String:UIImage]()
@@ -19,7 +18,6 @@ class NetworkManager{
     init(options : FYBOfferOptions) {
         self.options = options
     }
-    
     //Public Method, Only this method will be exposed to OfferViewController  that will first generate the url by adding the default parameters provided in the challenge   and passing that parameters to private method to fetch the offers by generating the mandatory parameters and this will return the response to the OfferViewController
     func fetchOffers(completion:@escaping ([FyberOfferModel]) -> Void, failure:@escaping (String) -> Void){
         let prepopulatedParameters  = [("format","json"),("local","DE"),("offer_types","112"),("ip","109.235.143.113")]
@@ -109,8 +107,6 @@ class NetworkManager{
             DispatchQueue.main.async {
                 failure("")
             }
-        
-            self.delegate?.offersLoadFailedWithError?(error: "URL Error")
         }
         
         

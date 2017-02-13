@@ -35,11 +35,10 @@ class OffersViewController: UIViewController {
     
     //Method to initiated NetworkManager class to fetch the offers and than display into the TableView
     func fetchOffers(){
-         self.lblNoOffers.isHidden = true
+        self.lblNoOffers.isHidden = true
         allOffers = []
         if self.options != nil {
             activityIndicator.startAnimating()
-            networkManager?.delegate = delegate
             networkManager?.fetchOffers(completion: { [weak self] offers in
                 self?.activityIndicator.stopAnimating()
                 
@@ -48,23 +47,23 @@ class OffersViewController: UIViewController {
                     self?.delegate?.offersRecevied?(totalOffers: offers.count)
                     self?.offerTableView.isHidden = false
                     self?.offerTableView.reloadData()
-                    self?.delegate?.offersDidLoad?()
+                    self?.delegate?.offersDidLoad!()
                 }
                 else{
                     self?.delegate?.offersLoadFailedWithError?(error: "No Offers found")
                     self?.lblNoOffers.isHidden = false
                 }
-                }, failure: { (error) in
+                }
+                , failure: { (error) in
                     self.offerTableView.isHidden = true
                     self.lblNoOffers.isHidden = false
                     self.delegate?.offersLoadFailedWithError?(error: error)
                     self.activityIndicator.stopAnimating()
             })
-        }else{
-            
+        }
+        else{
             self.delegate?.offersLoadFailedWithError?(error: "Invalid Options")
         }
-        
         
     }
     

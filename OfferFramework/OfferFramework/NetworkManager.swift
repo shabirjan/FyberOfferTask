@@ -78,18 +78,17 @@ class NetworkManager{
                         return
                     }
                     let allOffers = JSON(data:data)["offers"]
-                    if allOffers.type == Type.array{
-                        if allOffers.arrayValue.count > 0{
-                            DispatchQueue.main.async {
-                                completion(allOffers.arrayValue.flatMap(FyberOfferModel.init(offerDictionary:)))
-                            }
-                            
-                        }else{
-                            DispatchQueue.main.async {
-                                failure("No Offers Found")
-                            }
-                            
+                    guard allOffers.type == Type.array  else {
+                        return
+                    }
+                    guard allOffers.arrayValue.count > 0 else {
+                        DispatchQueue.main.async {
+                            failure("No Offers Found")
                         }
+                        return
+                    }
+                    DispatchQueue.main.async {
+                        completion(allOffers.arrayValue.flatMap(FyberOfferModel.init(offerDictionary:)))
                     }
                 }else{
                     DispatchQueue.main.async {

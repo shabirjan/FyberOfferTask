@@ -35,7 +35,7 @@ import UIKit
 public class FyberOfferSDK{
     
     let fybOptions : FYBOfferOptions
-    public var delegate : FyberOfferDelegate?
+    public weak var delegate : FyberOfferDelegate!
     
     public init(options:FYBOfferOptions) {
         fybOptions = options

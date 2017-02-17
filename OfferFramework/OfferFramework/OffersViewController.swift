@@ -11,7 +11,7 @@ import UIKit
 class OffersViewController: UIViewController {
     
     
-    var delegate: FyberOfferDelegate?
+    weak var delegate: FyberOfferDelegate!
     var options : FYBOfferOptions?
     var networkManager : NetworkManager?
     var parentController : UIViewController?
@@ -44,25 +44,25 @@ class OffersViewController: UIViewController {
                 
                 if offers.count > 0 {
                     self?.allOffers = offers
-                    self?.delegate?.offersRecevied?(totalOffers: offers.count)
+                    self?.delegate?.offersRecevied!(totalOffers: offers.count)
                     self?.offerTableView.isHidden = false
                     self?.offerTableView.reloadData()
                     self?.delegate?.offersDidLoad!()
                 }
                 else{
-                    self?.delegate?.offersLoadFailedWithError?(error: "No Offers found")
+                    self?.delegate?.offersLoadFailedWithError!(error: "No Offers found")
                     self?.lblNoOffers.isHidden = false
                 }
                 }
                 , failure: { (error) in
                     self.offerTableView.isHidden = true
                     self.lblNoOffers.isHidden = false
-                    self.delegate?.offersLoadFailedWithError?(error: error)
+                    self.delegate?.offersLoadFailedWithError!(error: error)
                     self.activityIndicator.stopAnimating()
             })
         }
         else{
-            self.delegate?.offersLoadFailedWithError?(error: "Invalid Options")
+            self.delegate?.offersLoadFailedWithError!(error: "Invalid Options")
         }
         
     }
@@ -71,7 +71,7 @@ class OffersViewController: UIViewController {
     
     //Close the Controller
     @IBAction func btnClosePressed(_ sender: Any) {
-        delegate?.offersDidClose?()
+        delegate?.offersDidClose!()
         parentController?.dismiss(animated: true, completion: nil)
     }
     
@@ -103,14 +103,14 @@ extension OffersViewController : UITableViewDelegate,UITableViewDataSource{
         networkManager?.fetchImage(url: currentOffer.offerThumbnail, completion: { (image) in
             cell?.thumbnailImage.image = image
         })
-        self.delegate?.offerDidLoadOnView?(offer: currentOffer)
+        self.delegate?.offerDidLoadOnView!(offer: currentOffer)
         
         
         return cell!
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedOffer = self.allOffers[indexPath.row]
-        self.delegate?.userSelectedOffer?(offer: selectedOffer)
+        self.delegate?.userSelectedOffer!(offer: selectedOffer)
         
     }
 }

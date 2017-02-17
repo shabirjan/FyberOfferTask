@@ -48,7 +48,7 @@ class OfferFunctionalTest: XCTestCase {
             expectations.fulfill()
         }
         waitForExpectations(timeout: 5) { (error) in
-            print(error?.localizedDescription as Any)
+            print(error?.localizedDescription)
         }
         
     }

@@ -67,10 +67,7 @@ class OffersViewController: UIViewController {
         
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+   
     
     //Close the Controller
     @IBAction func btnClosePressed(_ sender: Any) {
